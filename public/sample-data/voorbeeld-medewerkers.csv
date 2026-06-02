@@ -1,0 +1,52 @@
+Volledige naam;Personeelsnummer;Nationaliteit;Geslacht;Geboortedatum;Dienstverband - In dienst;Historische datum in dienst;Ploeg uren per week;Afwijkend uren per week;Functie;Functiegroep;Afw. functiegroep;Afw. functie;Standaardfunctie;Afdeling;Basisloon;Basisloon eenheid;Salarisschaal;Salariscel
+Schipper D;14;Nederlandse;Vrouw;26-11-1979;01-07-2022;;40,00;;Manager;1a;;;;Transport;4946,00;Periodeloon;;
+Kramer - Cremer M;7;Nederlandse;Vrouw;02-10-1996;01-01-2018;;40,00;36,00;Sales medewerker;1;;;;Algemeen;3361,28;Periodeloon;;
+Driessen M;15;Nederlandse;Man;01-01-1971;01-07-2022;;40,00;;Sales medewerker;1;;;;LangdurigZiekeMensen;5569,75;Periodeloon;;
+Bos B.D.;5;Nederlandse;Vrouw;01-02-1980;02-01-2021;;40,00;;Manager;1a;AfwGr;AfwFunctieOmsc;Cirkelzager;Transport;4000,00;Periodeloon;;
+Meuffels J;8;Nederlandse;Man;09-02-1993;01-01-2024;;40,00;;Sales medewerker;1;;;;Directie;40,92;Uurloon;;
+Kop L;13;Nederlandse;Vrouw;15-01-1980;01-07-2022;;40,00;;Logistiek medewerker;1;;;;Algemeen;13745,07;Periodeloon;;
+Verbeek TweeDvb G;11;Nederlandse;Vrouw;02-08-1986;01-01-2021;;40,00;;Logistiek medewerker;1;;;;Algemeen;50,13;Uurloon;;
+Dienstverband2020 T;16;Nederlandse;Vrouw;10-11-1993;01-01-2020;;40,00;36,00;Logistiek medewerker;1;;;;Directie;5252,00;Periodeloon;;
+Smalius S;19;Nederlandse;Vrouw;03-03-1991;01-01-2023;;38,00;16,00;Logistiek medewerker;1;;;;Algemeen;3490,12;Periodeloon;;
+Mertens L;21;Nederlandse;Vrouw;05-05-1994;01-01-2023;;38,00;;Logistiek medewerker;1;;;;Algemeen;6194,61;Periodeloon;;
+Dongen H;20;Nederlandse;Man;30-04-1996;01-01-2023;;38,00;36,00;Sales medewerker;1;;;;LangdurigZiekeMensen;3424,01;Periodeloon;;
+Netals D.M.;18;Nederlandse;Man;21-04-2003;01-01-2023;;38,00;38,00;Logistiek medewerker;1;;;;Algemeen;5302,50;Periodeloon;;
+Moermans M;23;Nederlandse;Man;01-01-1980;01-05-2020;;40,00;;Sales medewerker;1;;;;Algemeen;5569,75;Periodeloon;;
+Tekol T;24;Nederlandse;Vrouw;17-03-2006;02-12-2023;;38,00;16,00;Sales medewerker;1;;;;Directie;2929,34;Periodeloon;;
+deKoninck B;25;Nederlandse;Vrouw;01-01-1980;01-01-2024;;38,00;;Logistiek medewerker;1;;;;Algemeen;5533,50;Periodeloon;;
+WN2 B;26;Nederlandse;Vrouw;01-01-1980;01-01-2024;;38,00;;Manager;1a;;;;Directie;5569,75;Periodeloon;;
+WN3 B;27;Nederlandse;Vrouw;01-01-1980;01-01-2023;;38,00;;Sales medewerker;1;;;;Transport;5569,75;Periodeloon;;
+Gnusmas S;28;Nederlandse;Man;03-05-2006;01-11-2024;;40,00;;Sales medewerker;1;;;;Algemeen;3490,74;Periodeloon;Garantielonen, maand;Groep 3a, 4 jaar relevante werkervaring of meer
+Mauser T;30;Nederlandse;Man;01-01-1980;01-07-2024;;40,00;;Sales medewerker;1;;;;Algemeen;5569,75;Periodeloon;;
+Duren - Daal D;31;Nederlandse;Vrouw;28-04-2006;01-07-2024;;40,00;;Sales medewerker;1;;;;Algemeen;3151,20;Periodeloon;;
+Ansari S;32;Onbekend;Man;01-06-2006;01-06-2024;;40,00;;Sales medewerker;1;;;;Algemeen;2217,04;Periodeloon;BBL Leerlingenloon, 4-weken;BBL Opleidingsjaar 1, 21 en ouder
+Seya S;35;Nederlandse;Man;10-10-1982;01-06-2024;;40,00;;Logistiek medewerker;1;;;;Directie;3070,99;Periodeloon;;
+WN1 B;36;Nederlandse;Vrouw;01-01-1980;01-01-2024;;40,00;;Logistiek medewerker;1;;;;Algemeen;5569,75;Periodeloon;;
+Weekverloner W;37;Nederlandse;Vrouw;01-01-1980;01-01-2024;;40,00;;Sales medewerker;1;;;;Algemeen;25,42;Uurloon;Onderst.Middel/Hoger, Lngr 2, tr 0 tm 10 (Uurln);Trede 9
+Boekewijk F;38;Nederlandse;Man;03-10-2004;01-01-2025;;40,00;;Sales medewerker;1;;;;Algemeen;3151,20;Periodeloon;;
+Corbin B;408;Nederlandse;Vrouw;01-01-1980;01-01-2024;;40,00;;Logistiek medewerker;1;;;;Algemeen;3110,96;Periodeloon;Garantielonen, 4-wekenloon;Groep 1a, 3 jaar relevante werkervaring
+Boom B;40;Nederlandse;Vrouw;01-01-1980;02-01-2024;;40,00;40,00;Sales medewerker;1;;;;Algemeen;22,32;Uurloon;;
+Overvelde S;41;Nederlandse;Vrouw;03-03-1991;01-01-2023;;40,00;;Logistiek medewerker;1;;;;Algemeen;4797,94;Periodeloon;;
+Appergem S;43;Onbekend;Vrouw;03-03-1991;01-01-2024;;40,00;;Logistiek medewerker;1;;;;Algemeen;9689,86;Periodeloon;;
+Loyalis B;42;Nederlandse;Vrouw;01-01-1980;01-01-2024;;40,00;;Logistiek medewerker;1;;;;Algemeen;5569,75;Periodeloon;;
+WerknemerImport A;1234;Nederlandse;Man;15-07-1986;01-01-2024;;40,00;;Logistiek medewerker;1;;;;Algemeen;3408,69;Periodeloon;;
+Testa R;1235;Nederlandse;Man;01-03-2007;01-03-2025;;40,00;;Logistiek medewerker;1;;;;LangdurigZiekeMensen;6932,64;Periodeloon;;
+Hoi R;1236;Nederlandse;Man;01-03-2007;01-03-2025;;40,00;;Sales medewerker;1;;;;Algemeen;45,17;Uurloon;;
+Arctic apg;1237;Nederlandse;Man;01-01-1980;01-01-2025;;40,00;;Sales medewerker;1;;;;Algemeen;14455,54;Periodeloon;;
+Innovic P.J.;1244;Nederlandse;Man;01-01-1980;01-01-2025;01-01-2025;40,00;;Sales medewerker;1;;;;Algemeen;8403,20;Periodeloon;;
+Innovic FF;1245;Nederlandse;Man;05-05-2005;01-01-2025;;38,00;;Sales medewerker;1;;;;Algemeen;8656,97;Periodeloon;;
+Harper Jimmy J;1246;Nederlandse;Man;01-01-1990;01-08-2024;;40,00;;Manager;1a;;;;LangdurigZiekeMensen;3551,38;Periodeloon;Garantielonen, maand;Groep 3a, 3 jaar relevante werkervaring
+Teelo WF;1252;Nederlandse;Vrouw;01-11-1999;01-01-2025;;40,00;;Manager;1a;;;;Transport;4201,60;Periodeloon;;
+Eggers E;1253;Nederlandse;Man;01-08-2005;01-01-2024;;38,00;;Sales medewerker;1;;;;Algemeen;5882,24;Periodeloon;;
+Testing J;1254;Nederlandse;Vrouw;01-01-1980;01-01-2025;;38,00;;Sales medewerker;1;;;;Algemeen;5252,00;Periodeloon;;
+DeclaratieSetIssue X;1270;Nederlandse;Man;20-05-1970;01-01-2010;;40,00;;Logistiek medewerker;1;;;;Algemeen;3151,20;Periodeloon;;
+DeclaratieSetIssueTwee X;1271;Nederlandse;Man;20-05-1970;01-01-2010;;40,00;;Logistiek medewerker;1;;;;Algemeen;3000,00;Periodeloon;;
+Theunissen J;1272;Nederlandse;Vrouw;18-10-2007;01-10-2025;;38,00;;Sales medewerker;1;;;;Directie;3151,20;Periodeloon;;
+Lanoie L;1273;Nederlandse;Vrouw;01-01-1980;01-01-2025;;38,00;;Sales medewerker;1;;;;Algemeen;5252,00;Periodeloon;;
+Konings DUB;1274;Nederlandse;Vrouw;01-01-1981;01-01-2025;;40,00;;Sales medewerker;1;;;;Algemeen;10504,00;Periodeloon;;
+Konings DUC;1275;Nederlandse;Man;01-01-1980;01-01-2024;;38,00;;Sales medewerker;1;;;;Algemeen;5252,00;Periodeloon;;
+Bama J.P.;1276;Nederlandse;Vrouw;01-01-1980;01-01-2025;;38,00;;Sales medewerker;1;;;;Algemeen;8571,26;Periodeloon;;
+Janis I.P.;1277;Nederlandse;Vrouw;01-01-1981;01-01-2025;;38,00;;Sales medewerker;1;;;;Algemeen;5882,24;Periodeloon;;
+Chinay A;1;Nederlandse;Man;01-01-2000;01-01-2026;;40,00;;Logistiek medewerker;1;;;;Algemeen;3151,20;Periodeloon;;
+Maes T;1280;Nederlandse;Vrouw;01-01-1980;01-01-2026;;40,00;;Logistiek medewerker;1;;;;Transport;2731,04;Periodeloon;Jeugdigen, maandloon;Functiegroep 2a, 18 jaar, 1 jaar ervaring
+Molton E E;489;Nederlandse;Vrouw;02-08-2002;01-07-2026;;40,00;;Logistiek medewerker;1;;;;Algemeen;2250,00;Periodeloon;;
