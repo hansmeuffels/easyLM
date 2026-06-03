@@ -6,7 +6,6 @@ import {
   calculateOverallGap,
   calculateRiskEmployees,
   calculateSignals,
-  calculateTrendByStartYear,
   collectFilterOptions,
   createEmptyFilters,
   parseEmployeesFromCsv,
@@ -45,7 +44,6 @@ function App() {
     () => calculateCategoryPayGap(filteredEmployees, (employee) => employee.ageCategory),
     [filteredEmployees],
   )
-  const trendData = useMemo(() => calculateTrendByStartYear(filteredEmployees), [filteredEmployees])
   const signals = useMemo(() => calculateSignals(filteredEmployees), [filteredEmployees])
 
   const handleEmployeesLoaded = (csvContent: string, fileName: string) => {
@@ -96,10 +94,8 @@ function App() {
             />
             <ChartsSection
               employees={filteredEmployees}
-              standardFunctionGaps={standardFunctionGaps}
               serviceYearGap={serviceYearGap}
               ageGap={ageGap}
-              trendData={trendData}
             />
             <RiskTables
               standardFunctionGaps={standardFunctionGaps}
