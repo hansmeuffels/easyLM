@@ -1,7 +1,7 @@
 import type {
   CategoryPayGap,
   Employee,
-  FunctionGroupGap,
+  StandardFunctionGap,
   OverallGapResult,
   RiskEmployee,
   RiskResult,
@@ -33,18 +33,18 @@ export const calculateOverallGap = (employees: Employee[]): OverallGapResult => 
   }
 }
 
-export const calculateFunctionGroupGaps = (employees: Employee[]): FunctionGroupGap[] => {
+export const calculateFunctionGroupGaps = (employees: Employee[]): StandardFunctionGap[] => {
   const groups = new Map<string, Employee[]>()
 
   for (const employee of employees) {
-    const group = groups.get(employee.functionGroup) ?? []
+    const group = groups.get(employee.standardFunction) ?? []
     group.push(employee)
-    groups.set(employee.functionGroup, group)
+    groups.set(employee.standardFunction, group)
   }
 
-  const results: FunctionGroupGap[] = []
+  const results: StandardFunctionGap[] = []
 
-  for (const [functionGroup, members] of groups.entries()) {
+  for (const [standardFunction, members] of groups.entries()) {
     if (members.length < MIN_GROUP_SIZE) {
       continue
     }
@@ -58,7 +58,7 @@ export const calculateFunctionGroupGaps = (employees: Employee[]): FunctionGroup
     const femaleAverageHourlyWage = average(women.map((employee) => employee.hourlyWage))
 
     results.push({
-      functionGroup,
+      standardFunction,
       employees: members.length,
       maleAverageHourlyWage,
       femaleAverageHourlyWage,
@@ -70,12 +70,12 @@ export const calculateFunctionGroupGaps = (employees: Employee[]): FunctionGroup
 }
 
 export const calculateRiskEmployees = (employees: Employee[]): RiskResult => {
-  const functionGroupGaps = calculateFunctionGroupGaps(employees)
+  const standardFunctionGaps = calculateFunctionGroupGaps(employees)
   const riskEmployees: RiskEmployee[] = []
 
-  for (const groupGap of functionGroupGaps) {
+  for (const groupGap of standardFunctionGaps) {
     const groupEmployees = employees.filter(
-      (employee) => employee.functionGroup === groupGap.functionGroup,
+      (employee) => employee.standardFunction === groupGap.standardFunction,
     )
 
     const lowerPaidGender =
@@ -95,7 +95,7 @@ export const calculateRiskEmployees = (employees: Employee[]): RiskResult => {
         riskEmployees.push({
           fullName: employee.fullName,
           personnelNumber: employee.personnelNumber,
-          functionGroup: employee.functionGroup,
+          standardFunction: employee.standardFunction,
           employer: employee.employer,
           hourlyWage: employee.hourlyWage,
           gapToOtherGenderPercentage: toPercentage(comparisonAverage, employee.hourlyWage),
@@ -105,17 +105,18 @@ export const calculateRiskEmployees = (employees: Employee[]): RiskResult => {
   }
 
   const byEmployer: Record<string, number> = {}
-  const byFunctionGroup: Record<string, number> = {}
+  const byStandardFunction: Record<string, number> = {}
 
   for (const employee of riskEmployees) {
     byEmployer[employee.employer] = (byEmployer[employee.employer] ?? 0) + 1
-    byFunctionGroup[employee.functionGroup] = (byFunctionGroup[employee.functionGroup] ?? 0) + 1
+    byStandardFunction[employee.standardFunction] =
+      (byStandardFunction[employee.standardFunction] ?? 0) + 1
   }
 
   return {
     total: riskEmployees.length,
     byEmployer,
-    byFunctionGroup,
+    byStandardFunction,
     employees: riskEmployees.sort(
       (a, b) => b.gapToOtherGenderPercentage - a.gapToOtherGenderPercentage,
     ),
@@ -178,15 +179,15 @@ export const calculateTrendByStartYear = (employees: Employee[]) => {
 }
 
 export const calculateSignals = (employees: Employee[]): string[] => {
-  const functionGaps = calculateFunctionGroupGaps(employees)
+  const standardFunctionGaps = calculateFunctionGroupGaps(employees)
   const risk = calculateRiskEmployees(employees)
 
   const insights: string[] = []
 
-  const topGap = functionGaps[0]
+  const topGap = standardFunctionGaps[0]
   if (topGap && Math.abs(topGap.gapPercentage) > 5) {
     insights.push(
-      `Functiegroep ${topGap.functionGroup} toont een loonverschil van ${topGap.gapPercentage.toFixed(1).replace('.', ',')}%.`,
+      `Standaardfunctie ${topGap.standardFunction} toont een loonverschil van ${topGap.gapPercentage.toFixed(1).replace('.', ',')}%.`,
     )
   }
 
@@ -209,9 +210,9 @@ export const calculateSignals = (employees: Employee[]): string[] => {
     )
   }
 
-  if (functionGaps.length > 0) {
+  if (standardFunctionGaps.length > 0) {
     insights.push(
-      `Loonverschillen binnen functiegroepen vragen nadere toetsing op factoren zoals dienstjaren en functiezwaarte.`,
+      `Loonverschillen binnen standaardfuncties vragen nadere toetsing op factoren zoals dienstjaren en functiezwaarte.`,
     )
   }
 

@@ -11,7 +11,7 @@ export interface Employee {
   dateOfBirth: Date | null
   startDate: Date | null
   jobTitle: string
-  functionGroup: string
+  standardFunction: string
   department: string
   employer: string
   location: string
@@ -34,7 +34,7 @@ export interface Filters {
   employer: string[]
   location: string[]
   cao: string[]
-  functionGroup: string[]
+  standardFunction: string[]
   salaryScale: string[]
   ageCategory: AgeCategory[]
   serviceYearsCategory: ServiceYearsCategory[]
@@ -47,8 +47,8 @@ export interface OverallGapResult {
   status: 'green' | 'orange' | 'red'
 }
 
-export interface FunctionGroupGap {
-  functionGroup: string
+export interface StandardFunctionGap {
+  standardFunction: string
   employees: number
   maleAverageHourlyWage: number
   femaleAverageHourlyWage: number
@@ -58,7 +58,7 @@ export interface FunctionGroupGap {
 export interface RiskEmployee {
   fullName: string
   personnelNumber: string
-  functionGroup: string
+  standardFunction: string
   employer: string
   hourlyWage: number
   gapToOtherGenderPercentage: number
@@ -67,7 +67,7 @@ export interface RiskEmployee {
 export interface RiskResult {
   total: number
   byEmployer: Record<string, number>
-  byFunctionGroup: Record<string, number>
+  byStandardFunction: Record<string, number>
   employees: RiskEmployee[]
 }
 

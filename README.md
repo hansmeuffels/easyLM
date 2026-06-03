@@ -69,11 +69,12 @@ src/
 ## KPI's en dashboards
 
 - Totale gender pay gap met stoplichtstatus
-- Pay gap per functiegroep (minimaal 5 medewerkers)
+- Pay gap per standaardfunctie (minimaal 5 medewerkers)
 - Risicomedewerkers (>5% onder gemiddeld uurloon van hoger betaalde geslacht)
 - Dienstjarenanalyse
 - Leeftijdsanalyse
-- Dashboardfilters (werkgever, vestiging, cao, functiegroep, salarisschaal, leeftijd, dienstjaren)
+- Dashboardfilters (werkgever, vestiging, cao, standaardfunctie, salarisschaal, leeftijd, dienstjaren)
+- Tabel met gefilterde werknemergegevens inclusief loon-, functie- en outlierinformatie
 
 ## Uitbreidbaar richting EU-compliance
 

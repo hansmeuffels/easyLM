@@ -6,7 +6,7 @@ interface FilterBarProps {
     employer: string[]
     location: string[]
     cao: string[]
-    functionGroup: string[]
+    standardFunction: string[]
     salaryScale: string[]
   }
   onChange: (filters: Filters) => void
@@ -80,10 +80,10 @@ export const FilterBar = ({ filters, options, onChange, onReset }: FilterBarProp
         onChange={(cao) => onChange({ ...filters, cao })}
       />
       <MultiSelect
-        label="Functiegroep"
-        values={filters.functionGroup}
-        options={options.functionGroup}
-        onChange={(functionGroup) => onChange({ ...filters, functionGroup })}
+        label="Standaardfunctie"
+        values={filters.standardFunction}
+        options={options.standardFunction}
+        onChange={(standardFunction) => onChange({ ...filters, standardFunction })}
       />
       <MultiSelect
         label="Salarisschaal"
