@@ -12,11 +12,11 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import type { CategoryPayGap, Employee, FunctionGroupGap } from '../types'
+import type { CategoryPayGap, Employee, StandardFunctionGap } from '../types'
 
 interface ChartsSectionProps {
   employees: Employee[]
-  functionGroupGaps: FunctionGroupGap[]
+  standardFunctionGaps: StandardFunctionGap[]
   serviceYearGap: CategoryPayGap[]
   ageGap: CategoryPayGap[]
   trendData: { year: number; gapPercentage: number }[]
@@ -46,17 +46,17 @@ const quartiles = (values: number[]) => {
 
 export const ChartsSection = ({
   employees,
-  functionGroupGaps,
+  standardFunctionGaps,
   serviceYearGap,
   ageGap,
   trendData,
 }: ChartsSectionProps) => {
-  const rankingData = functionGroupGaps.slice(0, 10).map((item) => ({
+  const rankingData = standardFunctionGaps.slice(0, 10).map((item) => ({
     ...item,
     gapAbs: Math.abs(item.gapPercentage),
   }))
 
-  const heatmapData = functionGroupGaps.slice(0, 12)
+  const heatmapData = standardFunctionGaps.slice(0, 12)
 
   const womenQuartiles = quartiles(
     employees.filter((employee) => employee.gender === 'Vrouw').map((employee) => employee.hourlyWage),
@@ -84,29 +84,29 @@ export const ChartsSection = ({
         </ResponsiveContainer>
       </ChartCard>
 
-      <ChartCard title="Horizontale ranking functiegroepen (top 10)">
+      <ChartCard title="Horizontale ranking standaardfuncties (top 10)">
         <ResponsiveContainer>
           <BarChart layout="vertical" data={rankingData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis type="number" unit="%" />
-            <YAxis type="category" dataKey="functionGroup" width={90} />
+            <YAxis type="category" dataKey="standardFunction" width={90} />
             <Tooltip formatter={(value) => `${Number(value ?? 0).toFixed(1)}%`} />
             <Bar dataKey="gapAbs" fill="#f97316" />
           </BarChart>
         </ResponsiveContainer>
       </ChartCard>
 
-      <ChartCard title="Heatmap functiegroepen vs pay gap">
+      <ChartCard title="Heatmap standaardfuncties vs pay gap">
         <div className="grid grid-cols-3 gap-2">
           {heatmapData.map((group) => {
             const intensity = Math.min(100, Math.abs(group.gapPercentage) * 12)
             return (
               <div
-                key={group.functionGroup}
+                key={group.standardFunction}
                 className="rounded-md p-2 text-xs text-slate-900"
                 style={{ backgroundColor: `hsl(14 100% ${100 - intensity / 2}%)` }}
               >
-                <p className="font-semibold">{group.functionGroup}</p>
+                <p className="font-semibold">{group.standardFunction}</p>
                 <p>{group.gapPercentage.toFixed(1)}%</p>
               </div>
             )

@@ -1,9 +1,9 @@
-import type { FunctionGroupGap, OverallGapResult, RiskResult } from '../types'
+import type { OverallGapResult, RiskResult, StandardFunctionGap } from '../types'
 import { formatNumber, formatPercentage } from '../analysis'
 
 interface KpiCardsProps {
   overallGap: OverallGapResult
-  functionGroupGaps: FunctionGroupGap[]
+  standardFunctionGaps: StandardFunctionGap[]
   riskResult: RiskResult
   outlierCount: number
 }
@@ -24,11 +24,11 @@ const Card = ({ title, value, subtitle }: { title: string; value: string; subtit
 
 export const KpiCards = ({
   overallGap,
-  functionGroupGaps,
+  standardFunctionGaps,
   riskResult,
   outlierCount,
 }: KpiCardsProps) => {
-  const groupsAboveThreshold = functionGroupGaps.filter(
+  const groupsAboveThreshold = standardFunctionGaps.filter(
     (group) => Math.abs(group.gapPercentage) > 5,
   ).length
 
@@ -40,9 +40,9 @@ export const KpiCards = ({
         subtitle={`${statusLabel[overallGap.status]} • M: €${formatNumber(overallGap.maleAverageHourlyWage)} / V: €${formatNumber(overallGap.femaleAverageHourlyWage)}`}
       />
       <Card
-        title="Functiegroepen > 5% gap"
+        title="Standaardfuncties > 5% gap"
         value={String(groupsAboveThreshold)}
-        subtitle={`van ${functionGroupGaps.length} geanalyseerde functiegroepen`}
+        subtitle={`van ${standardFunctionGaps.length} geanalyseerde standaardfuncties`}
       />
       <Card
         title="Risicomedewerkers"
@@ -50,11 +50,11 @@ export const KpiCards = ({
         subtitle=">5% onder gemiddeld uurloon van ander geslacht"
       />
       <Card
-        title="Top functiegroep"
-        value={functionGroupGaps[0] ? functionGroupGaps[0].functionGroup : '-'}
+        title="Top standaardfunctie"
+        value={standardFunctionGaps[0] ? standardFunctionGaps[0].standardFunction : '-'}
         subtitle={
-          functionGroupGaps[0]
-            ? `${formatPercentage(functionGroupGaps[0].gapPercentage)} verschil`
+          standardFunctionGaps[0]
+            ? `${formatPercentage(standardFunctionGaps[0].gapPercentage)} verschil`
             : 'Nog onvoldoende data'
         }
       />

@@ -1,13 +1,13 @@
-import type { FunctionGroupGap, RiskResult } from '../types'
+import type { RiskResult, StandardFunctionGap } from '../types'
 import { formatNumber, formatPercentage } from '../analysis'
 
 interface RiskTablesProps {
-  functionGroupGaps: FunctionGroupGap[]
+  standardFunctionGaps: StandardFunctionGap[]
   riskResult: RiskResult
   signals: string[]
 }
 
-export const RiskTables = ({ functionGroupGaps, riskResult, signals }: RiskTablesProps) => (
+export const RiskTables = ({ standardFunctionGaps, riskResult, signals }: RiskTablesProps) => (
   <section className="grid gap-4 xl:grid-cols-3">
     <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm xl:col-span-1">
       <h3 className="mb-3 text-sm font-semibold text-slate-900">Automatische signaleringen</h3>
@@ -22,21 +22,21 @@ export const RiskTables = ({ functionGroupGaps, riskResult, signals }: RiskTable
     </article>
 
     <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm xl:col-span-1">
-      <h3 className="mb-3 text-sm font-semibold text-slate-900">Risicofunctiegroepen</h3>
+      <h3 className="mb-3 text-sm font-semibold text-slate-900">Risico standaardfuncties</h3>
       <div className="overflow-auto">
         <table className="min-w-full text-left text-xs">
           <thead className="text-slate-500">
             <tr>
-              <th>Functiegroep</th>
+              <th>Standaardfunctie</th>
               <th>Medewerkers</th>
               <th>Gap %</th>
               <th>Risico</th>
             </tr>
           </thead>
           <tbody>
-            {functionGroupGaps.slice(0, 10).map((group) => (
-              <tr key={group.functionGroup} className="border-t border-slate-100">
-                <td className="py-2">{group.functionGroup}</td>
+            {standardFunctionGaps.slice(0, 10).map((group) => (
+              <tr key={group.standardFunction} className="border-t border-slate-100">
+                <td className="py-2">{group.standardFunction}</td>
                 <td>{group.employees}</td>
                 <td>{formatPercentage(group.gapPercentage)}</td>
                 <td>{Math.abs(group.gapPercentage) > 5 ? 'Hoog' : 'Beperkt'}</td>
@@ -54,7 +54,7 @@ export const RiskTables = ({ functionGroupGaps, riskResult, signals }: RiskTable
           <thead className="text-slate-500">
             <tr>
               <th>Medewerker</th>
-              <th>Functiegroep</th>
+              <th>Standaardfunctie</th>
               <th>Uurloon</th>
               <th>Verschil %</th>
             </tr>
@@ -63,7 +63,7 @@ export const RiskTables = ({ functionGroupGaps, riskResult, signals }: RiskTable
             {riskResult.employees.slice(0, 10).map((employee) => (
               <tr key={employee.personnelNumber} className="border-t border-slate-100">
                 <td className="py-2">{employee.fullName}</td>
-                <td>{employee.functionGroup}</td>
+                <td>{employee.standardFunction}</td>
                 <td>€ {formatNumber(employee.hourlyWage)}</td>
                 <td>{formatPercentage(employee.gapToOtherGenderPercentage)}</td>
               </tr>

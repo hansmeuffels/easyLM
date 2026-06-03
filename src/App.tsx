@@ -12,6 +12,7 @@ import {
   parseEmployeesFromCsv,
 } from './analysis'
 import { ChartsSection } from './components/ChartsSection'
+import { EmployeeTable } from './components/EmployeeTable'
 import { FilterBar } from './components/FilterBar'
 import { KpiCards } from './components/KpiCards'
 import { RiskTables } from './components/RiskTables'
@@ -30,7 +31,7 @@ function App() {
   const filteredEmployees = useMemo(() => applyFilters(employees, filters), [employees, filters])
 
   const overallGap = useMemo(() => calculateOverallGap(filteredEmployees), [filteredEmployees])
-  const functionGroupGaps = useMemo(
+  const standardFunctionGaps = useMemo(
     () => calculateFunctionGroupGaps(filteredEmployees),
     [filteredEmployees],
   )
@@ -89,22 +90,23 @@ function App() {
             />
             <KpiCards
               overallGap={overallGap}
-              functionGroupGaps={functionGroupGaps}
+              standardFunctionGaps={standardFunctionGaps}
               riskResult={riskResult}
               outlierCount={outlierCount}
             />
             <ChartsSection
               employees={filteredEmployees}
-              functionGroupGaps={functionGroupGaps}
+              standardFunctionGaps={standardFunctionGaps}
               serviceYearGap={serviceYearGap}
               ageGap={ageGap}
               trendData={trendData}
             />
             <RiskTables
-              functionGroupGaps={functionGroupGaps}
+              standardFunctionGaps={standardFunctionGaps}
               riskResult={riskResult}
               signals={signals}
             />
+            <EmployeeTable employees={filteredEmployees} />
           </>
         ) : (
           <section className="rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-600 shadow-sm">
